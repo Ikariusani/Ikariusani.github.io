@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <img src="unnamed.png" id="rul">
+    <button onclick="stopRul()">СТОП</button>
+    <button onclick="startRul()">СТАРТ</button>
+    <script>
+        document.body.style.backgroundImage = "url(ff.webp)";
+        let rul = document.getElementById('rul');
+        let angle = 0; 
+        console.log(rul)
+
+        function rotateRul(){
+            angle +=2;
+            rul.style.transform = 'rotate('+ angle + 'deg)'
+        }
+        let deltaTime = Math.random()*20000+5000;
+        console.log(deltaTime)
+        function Cheacktime(){
+            let time2 = Date.now();
+            let time3 = time2 - time;
+            if(time3> deltaTime ){
+                clearInterval(timer)
+            }
+
+        }
+        let timer;
+        
+        let time;
+
+        function startRul(){
+            timer = setInterval(rotateRul, 1);
+            setInterval(Cheacktime,1)
+            time = Date.now();
+            console.log(time)
+    
+        }
+        
+        function stopRul(){ 
+            clearInterval(timer)
+
+        }
+        
+
+
+    </script>
+</body>
+<body>
+    <img src="" alt="">
+
+
+</body>
+</html>
